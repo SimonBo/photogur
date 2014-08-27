@@ -1,0 +1,7 @@
+<%= @photo.title  %><br \>
+<%= @photo.author  %><br \>
+<%= image_tag @photo.url  %>
+
+<%= link_to 'Edit', edit_photo_path(@photo)  %>
+<%= link_to 'Delete', @article, method: :delete  %>
+<%= link_to 'All photos', photos_path  %>
