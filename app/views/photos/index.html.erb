@@ -8,3 +8,15 @@
 	<%= photo.author %>
 <% end %>
 
+<h2>1 month old</h2>
+
+<p>There are <%= Photo.created_before(1.month.ago).count %> photos older than 1 month</p>
+
+<% unless Photo.created_before(1.month.ago).empty? %>
+  <%= Photo.created_before(1.month.ago).each do |photo|%>
+    <%= link_to (image_tag photo.url), photo %>
+    <%= photo.title  %>
+    <%= photo.author %>
+  <% end %>
+<% end %>
+
